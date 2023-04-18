@@ -20,7 +20,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <h1 className="text-6xl font-bold underline">Hello world!</h1>
         <NavBar />
         {/* <main>
           <Routes>
