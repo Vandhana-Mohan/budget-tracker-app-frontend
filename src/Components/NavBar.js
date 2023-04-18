@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <nav className="bg-gray-700 text-white py-4">
@@ -6,7 +7,9 @@ function NavBar() {
           View All Transactions
         </li>
         <li className="cursor-pointer hover:text-gray-300">New Transaction</li>
-        <li className="cursor-pointer hover:text-gray-300">About Us</li>
+        <Link to="/about">
+          <li className="cursor-pointer hover:text-gray-300">About Us</li>
+        </Link>
         <li className="cursor-pointer hover:text-gray-300">Feedback</li>
         <li className="cursor-pointer hover:text-gray-300">Contact Us</li>
       </ul>

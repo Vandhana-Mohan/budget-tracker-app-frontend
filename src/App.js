@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-
+import AboutUs from "./Components/AboutUs";
 // PAGES
 import Home from "./Pages/Home";
 import Index from "./Pages/Index";
@@ -26,6 +26,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
             <Route path="/budgets/:index/edit" element={<Edit />} />
             <Route path="/budgets/new" element={<New />} />
             <Route path="/budgets/:index" element={<Show />} />
