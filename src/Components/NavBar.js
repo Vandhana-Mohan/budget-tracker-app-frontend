@@ -6,10 +6,9 @@ function NavBar() {
           View All Transactions
         </li>
         <li className="cursor-pointer hover:text-gray-300">New Transaction</li>
-        <li className="cursor-pointer hover:text-gray-300">Edit Transaction</li>
-        <li className="cursor-pointer hover:text-gray-300">
-          Delete Transaction
-        </li>
+        <li className="cursor-pointer hover:text-gray-300">About Us</li>
+        <li className="cursor-pointer hover:text-gray-300">Feedback</li>
+        <li className="cursor-pointer hover:text-gray-300">Contact Us</li>
       </ul>
     </nav>
   );
