@@ -3,7 +3,6 @@ import Budget from "./Budget";
 
 function Budgets() {
   const [budgets, setBudgets] = useState([]);
-  console.log("hello");
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}/budgets`)
       .then((res) => res.json())
