@@ -16,18 +16,23 @@ function Budgets() {
   }, []);
 
   return (
-    <div>
-      <table>
+    <div className="flex flex-col justify-center items-center">
+      <table className="table-fixed border-collapse border-gray-600 border-2">
         <thead>
-          <tr>
-            <th>Id</th>
-            <th>Item Name</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>From</th>
-            <th>Category</th>
+          <tr className="bg-gray-700 text-white">
+            <th className="w-1/12 py-2">Id</th>
+            <th className="w-2/12 py-2">Item Name</th>
+            <th className="w-1/12 py-2">Amount</th>
+            <th className="w-2/12 py-2">Date</th>
+            <th className="w-2/12 py-2">From</th>
+            <th className="w-2/12 py-2">Category</th>
           </tr>
         </thead>
+        <tbody>
+          {budgets.map((budget, index) => {
+            return <Budget key={index} budget={budget} index={index} />;
+          })}
+        </tbody>
       </table>
     </div>
   );
