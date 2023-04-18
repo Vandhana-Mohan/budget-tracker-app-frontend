@@ -5,13 +5,10 @@ function Budgets() {
   const [budgets, setBudgets] = useState([]);
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}/budgets`)
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         setBudgets(data);
         console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
       });
   }, []);
 
