@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <nav className="bg-gray-700 text-white py-4">
+    <nav className="bg-gray-700 text-white py-4 fixed bottom-0 w-full">
       <ul className="flex justify-around">
         <li className="cursor-pointer hover:text-gray-300">About Us</li>
         <li className="cursor-pointer hover:text-gray-300">Feedback</li>
@@ -10,4 +10,5 @@ function Footer() {
     </nav>
   );
 }
+
 export default Footer;
