@@ -1,7 +1,7 @@
 // DEPENDENCIES
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 // COMPONENTS
 import NavBar from "./Components/NavBar";
 import Header from "./Components/Header";
