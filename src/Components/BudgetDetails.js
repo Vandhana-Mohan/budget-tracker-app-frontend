@@ -33,7 +33,7 @@ function BudgetDetails() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8" style={{ paddingBottom: "10rem" }}>
       <div className="bg-white shadow overflow-hidden sm:rounded-lg">
         <div className="px-4 py-5 sm:px-6 my-4">
           <h2 className="text-lg leading-6 font-medium text-gray-900 my-4">

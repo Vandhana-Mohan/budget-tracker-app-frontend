@@ -16,7 +16,10 @@ function Budgets() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div
+      className="flex flex-col justify-center items-center"
+      style={{ paddingBottom: "10rem" }}
+    >
       <table className="table-fixed border-collapse border-gray-600 border-2">
         <thead>
           <tr className="bg-gray-700 text-white">
