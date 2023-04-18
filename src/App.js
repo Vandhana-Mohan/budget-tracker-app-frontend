@@ -1,25 +1,34 @@
+// DEPENDENCIES
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// COMPONENTS
+import NavBar from "./Components/NavBar";
+
+// PAGES
 import Home from "./Pages/Home";
-import Edit from "./Pages/Edit";
-import FourOFour from "./Pages/FourOFour";
 import Index from "./Pages/Index";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
+import Edit from "./Pages/Edit";
+import FourOFour from "./Pages/FourOFour";
 
 function App() {
   return (
-    <div>
-      <h1> Hello </h1>
+    <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element=<Home /> />
-          <Route path="/Edit/:index" element=<Edit /> />
-          <Route path="/New" element=<New /> />
-          <Route path="/Show" element=<Show /> />
-          <Route path="/Index" element=<Index /> />
-          <Route path="*" element=<FourOFour /> />
-        </Routes>
+        <h1 className="text-6xl font-bold underline">Hello world!</h1>
+        <NavBar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/budgets/:index/edit" element={<Edit />} />
+            <Route path="/budgets/new" element={<New />} />
+            <Route path="/budgets/:index" element={<Show />} />
+            <Route path="/budgets" element={<Index />} />
+            <Route path="*" element={<FourOFour />} />
+          </Routes>
+        </main>
       </BrowserRouter>
     </div>
   );
