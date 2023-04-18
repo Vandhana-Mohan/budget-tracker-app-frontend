@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 // PAGES
 import Home from "./Pages/Home";
@@ -17,9 +19,10 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Header />
         <h1 className="text-6xl font-bold underline">Hello world!</h1>
         <NavBar />
-        <main>
+        {/* <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/budgets/:index/edit" element={<Edit />} />
@@ -28,7 +31,8 @@ function App() {
             <Route path="/budgets" element={<Index />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
-        </main>
+        </main> */}
+        <Footer />
       </BrowserRouter>
     </div>
   );
