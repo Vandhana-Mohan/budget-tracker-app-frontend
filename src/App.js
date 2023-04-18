@@ -24,8 +24,8 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/budgets/:index/edit" element={<Edit />} /> */}
-            {/* <Route path="/budgets/new" element={<New />} /> */}
+            <Route path="/budgets/:index/edit" element={<Edit />} />
+            <Route path="/budgets/new" element={<New />} />
             <Route path="/budgets/:index" element={<Show />} />
             <Route path="/budgets" element={<Index />} />
             <Route path="*" element={<FourOFour />} />
