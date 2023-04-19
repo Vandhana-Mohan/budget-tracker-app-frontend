@@ -15,6 +15,7 @@ function BudgetEditForm() {
     category: "",
     isWithdrawal: false,
   });
+  
   let navigate = useNavigate();
   const [categories, setCategories] = useState([
     "Taxes",
@@ -30,10 +31,21 @@ function BudgetEditForm() {
 
   function handleCategoryChange(event) {
     const { value } = event.target;
-    setEditBudget((prevBudget) => ({
-      ...prevBudget,
-      category: value,
-    }));
+    if (value === "addCategory") {
+      const newCategory = prompt("Enter the name of the new category:");
+      if (newCategory) {
+        setCategories([...categories, newCategory]);
+        setEditBudget((prevBudget) => ({
+          ...prevBudget,
+          category: newCategory,
+        }));
+      }
+    } else {
+      setEditBudget((prevBudget) => ({
+        ...prevBudget,
+        category: value,
+      }));
+    }
   }
 
   const handleTextChange = (event) => {
@@ -158,6 +170,7 @@ function BudgetEditForm() {
                 {category}
               </option>
             ))}
+            <option value="addCategory">Add new category</option>
           </select>
         </div>
         <div className="flex justify-center space-x-4">

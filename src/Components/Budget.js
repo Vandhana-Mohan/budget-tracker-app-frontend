@@ -10,24 +10,33 @@ function formatDate(dateString) {
   return `${monthName} ${day}, ${year}`; // returns "May 05, 2023"
 }
 
+function toTitleCase(str) {
+  const words = str.split(" ");
+  const capitalizedWords = words.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+  return capitalizedWords.join(" ");
+}
+
 function Budget({ budget, index }) {
+  const shortId = budget.id.slice(-6);
   return (
     <tr className="border-b border-gray-200 hover:bg-gray-100">
-      <td className="w-1/12 px-4 py-3">{budget.id}</td>
+      <td className="w-1/12 px-4 py-3">{shortId}</td>
       <td className="w-1/12 px-4 py-3">
         <Link
           to={`/budgets/${index}`}
           className="text-blue-600 hover:underline"
         >
-          {budget.item_name}
+          {toTitleCase(budget.item_name)}
         </Link>
       </td>
       <td className="w-2/12 px-4 py-3">
         {!budget.isWithdrawal ? "" : "-"} $ {budget.amount}
       </td>
       <td className="w-1/12 px-4 py-3">{formatDate(budget.date)}</td>
-      <td className="w-1/12 px-4 py-3">{budget.from}</td>
-      <td className="w-1/12 px-4 py-3">{budget.category}</td>
+      <td className="w-1/12 px-4 py-3">{toTitleCase(budget.from)}</td>
+      <td className="w-1/12 px-4 py-3">{toTitleCase(budget.category)}</td>
     </tr>
   );
 }

@@ -28,17 +28,20 @@ function BudgetDetails() {
   }, [index, navigate]);
 
   const handleDelete = () => {
-    fetch(`${process.env.REACT_APP_API_URL}/budgets/${index}`, {
-      method: "DELETE",
-    })
-      .then(() => {
-        navigate("/budgets");
+    if (window.confirm("Are you sure you want to delete this item?")) {
+      fetch(`${process.env.REACT_APP_API_URL}/budgets/${index}`, {
+        method: "DELETE",
       })
-      .catch((error) => {
-        console.log(error);
-        navigate("/not-found");
-      });
+        .then(() => {
+          navigate("/budgets");
+        })
+        .catch((error) => {
+          console.log(error);
+          navigate("/not-found");
+        });
+    }
   };
+  
 
   return (
     <div
@@ -51,7 +54,10 @@ function BudgetDetails() {
             {budget.item_name} - From {budget.from}
           </h2>
           <p className="mt-1 max-w-2xl text-sm text-gray-500 my-4">
-            <strong> Date : {formatDate(budget.date)} </strong> 
+            <strong> Item Id : {budget.id} </strong>
+          </p>
+          <p className="mt-1 max-w-2xl text-sm text-gray-500 my-4">
+            <strong> Date : {formatDate(budget.date)} </strong>
           </p>
           <p className="mt-1 max-w-2xl text-sm text-gray-500 my-4">
             <strong> Amount : $ {budget.amount} </strong>

@@ -31,10 +31,21 @@ function BudgetNewForm() {
 
   function handleCategoryChange(event) {
     const { value } = event.target;
-    setNewBudget((prevBudget) => ({
-      ...prevBudget,
-      category: value,
-    }));
+    if (value === "addCategory") {
+      const newCategory = prompt("Enter the name of the new category:");
+      if (newCategory) {
+        setCategories([...categories, newCategory]);
+        setNewBudget((prevBudget) => ({
+          ...prevBudget,
+          category: newCategory,
+        }));
+      }
+    } else {
+      setNewBudget((prevBudget) => ({
+        ...prevBudget,
+        category: value,
+      }));
+    }
   }
 
   const handleCheckboxChange = (event) => {
@@ -169,6 +180,7 @@ function BudgetNewForm() {
                 {category}
               </option>
             ))}
+            <option value="addCategory">Add new category</option>
           </select>
         </div>
         <div className="flex justify-center space-x-4">
