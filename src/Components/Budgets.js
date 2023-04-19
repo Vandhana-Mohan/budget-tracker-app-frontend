@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Budget from "./Budget";
+import Navbar from "./NavBar";
 
 function Budgets() {
   const [budgets, setBudgets] = useState([]);
@@ -14,42 +15,39 @@ function Budgets() {
       });
   }, []);
 
-  let total = 0;
+  // let total = 0;
 
-  budgets.forEach((budget) => {
-    if (budget.isWithdrawal) {
-      total -= parseInt(budget.amount);
-    } else {
-      total += parseInt(budget.amount);
-    }
-  });
+  // budgets.forEach((budget) => {
+  //   if (budget.isWithdrawal) {
+  //     total -= parseInt(budget.amount);
+  //   } else {
+  //     total += parseInt(budget.amount);
+  //   }
+  // });
 
-  const formattedBalance = total.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
+  // const formattedBalance = total.toLocaleString("en-US", {
+  //   style: "currency",
+  //   currency: "USD",
+  //   minimumFractionDigits: 2,
+  //   maximumFractionDigits: 2,
+  // });
 
   // Calculate the total amount color based on the total amount
-  let totalColor;
-  if (total > 100) {
-    totalColor = { color: "green" };
-  } else if (total >= 0 && total <= 100) {
-    totalColor = { color: "yellow" };
-  } else if (total < 0) {
-    totalColor = { color: "red" };
-  }
+
+  // let totalColor;
+  // if (total > 100) {
+  //   totalColor = { color: "green" };
+  // } else if (total >= 0 && total <= 100) {
+  //   totalColor = { color: "yellow" };
+  // } else if (total < 0) {
+  //   totalColor = { color: "red" };
+  // }
 
   return (
     <div
       className="flex flex-col justify-center items-center"
       style={{ paddingBottom: "10rem" }}
     >
-      <h2 className="text-3xl font-bold mb-4" style={totalColor}>
-        {" "}
-        Total Balance: {formattedBalance}
-      </h2>
       <table className="table-fixed border-collapse border-gray-600 border-2 text-center">
         <thead>
           <tr className="bg-gray-700 text-white">

@@ -1,6 +1,6 @@
 # Budget Master Application
 
-[Budget Master Application ](https://three-m-youtube.netlify.app) is a budget application app that helps users keep track of their finances. The app is built using React, HTML, Tailwind, and JavaScript, and it uses an API from a backend created with Express.
+[Budget Master Application ](https://budget-master-app.netlify.app/) is a budget application app that helps users keep track of their finances. The app is built using React, HTML, Tailwind, and JavaScript, and it uses an API from a backend created with Express.
 
 ### Introduction
 This budget application app helps users keep track of their finances by allowing them to add, edit, and delete transactions. The interface is simple and easy to use, making it accessible to users of all experience levels. Additionally, the app includes an About Us page and a footer with social media icons to help users learn more about the developers and stay connected.
