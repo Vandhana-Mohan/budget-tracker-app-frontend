@@ -1,23 +1,73 @@
-# Getting Started with Create React App
+# Budget Master Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Budget Master Application ](https://three-m-youtube.netlify.app) is a budget application app that helps users keep track of their finances. The app is built using React, HTML, Tailwind, and JavaScript, and it uses an API from a backend created with Express.
 
-## Available Scripts
+### Introduction
+This budget application app helps users keep track of their finances by allowing them to add, edit, and delete transactions. The interface is simple and easy to use, making it accessible to users of all experience levels. Additionally, the app includes an About Us page and a footer with social media icons to help users learn more about the developers and stay connected.
 
-In the project directory, you can run:
+### About Developer 
 
-### `npm start`
+Vandhana Mohan  [GitHub](https://github.com/Vandhana-Mohan) | [LinkedIn](https://www.linkedin.com/in/vandhanamohan/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Trello
+
+We use Trello to manage our project tasks. 
+You can view our [Trello board](https://trello.com/invite/b/aPBAsXLu/ATTI95e66bf9a94bda363eef290bb0bab0ddDDF29B80/budgeting-app) here.
+
+### Features
+
+This app includes the following features:
+
+- Adding a new transaction
+- Editing a transaction
+- Deleting a transaction
+- Showing all transactions
+- Simple and easy-to-use interface
+- About us page
+- Footer with social media icons
+- Responsive to all devices
+
+## Skills
+- React: A JavaScript library used for building user interfaces and web applications.
+- HTML: Used to create the structure and layout of web pages.
+- JavaScript: A programming language that allows you to add interactivity and dynamic behavior to web pages.
+- Git: A version control system that allows you to track changes to your code and collaborate with others.
+- GitHub: GitHub is a popular platform used for hosting and sharing code repositories.
+- Adobe Photoshop, PicsArt: A graphics editing software used for image editing and manipulation.
+- Tailwind: A utility-first CSS framework that helps quick design responsive and accessible interfaces for the web.
+- Express: A fast and minimalist web framework for Node.js that allows you to build web applications and APIs.
+
+## Installation
+
+1. Fork and Clone the repository using the following command:
+
+   ```
+   git clone <repository-url>
+
+   ```
+2. Navigate to the project directory and install the dependencies using the following command:
+
+   ```
+   `cd` into this repository
+   npm install
+
+   ```
+3. Run  `npm start` to start the development server.
+
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### Environment Variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You'll need to set up some environment variables in order to use this app. Create a .env file in the root directory of the app and add the following variables:
+
+    ```
+    REACT_APP_API_URL=http://localhost:3000/api
+    ```
+    Replace http://localhost:3000 with the URL of your backend API.
 
 ### `npm run build`
 
@@ -27,17 +77,14 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Deployment
 
-### `npm run eject`
+This app can be deployed using any hosting service that supports React apps. To deploy the app, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Build the app using npm run build.
+2. Upload the contents of the build directory to your hosting service.
+3. Start the app using your hosting service's deployment tools.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 ## Learn More
 
