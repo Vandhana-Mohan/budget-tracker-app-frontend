@@ -8,18 +8,33 @@ function Budgets() {
       .then((res) => res.json())
       .then((data) => {
         setBudgets(data);
-        console.log(data);
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
+  const totalBalance = budgets.reduce((acc, budget) => {
+    return acc + budget.amount;
+  }, 0);
+
+  
+  const formattedBalance = totalBalance.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
   return (
     <div
       className="flex flex-col justify-center items-center"
       style={{ paddingBottom: "10rem" }}
     >
+      <h2 className="text-3xl font-bold mb-4">
+        {" "}
+        Total Balance: {formattedBalance}
+      </h2>
       <table className="table-fixed border-collapse border-gray-600 border-2">
         <thead>
           <tr className="bg-gray-700 text-white">

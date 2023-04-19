@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 function BudgetNewForm() {
-  const [budget, setBudget] = useState({
+  const [newbudget, setNewBudget] = useState({
     id: uuidv4(),
     item_name: "",
     amount: 0,
@@ -15,7 +15,7 @@ function BudgetNewForm() {
 
   const navigate = useNavigate();
 
-  const [length, setLength] = useState([])
+  const [length, setLength] = useState([]);
 
   const [categories, setCategories] = useState([
     "Taxes",
@@ -31,23 +31,23 @@ function BudgetNewForm() {
 
   function handleCategoryChange(event) {
     const { value } = event.target;
-    setBudget((prevBudget) => ({
+    setNewBudget((prevBudget) => ({
       ...prevBudget,
       category: value,
     }));
   }
 
   const handleCheckboxChange = (event) => {
-    setBudget({ ...budget, isWithdrawal: event.target.checked });
+    setNewBudget({ ...newbudget, isWithdrawal: event.target.checked });
   };
 
   const handleTextChange = (event) => {
-    setBudget({ ...budget, [event.target.id]: event.target.value });
+    setNewBudget({ ...newbudget, [event.target.id]: event.target.value });
   };
 
   function handleDateChange(event) {
     const { value } = event.target;
-    setBudget((prevBudget) => ({
+    setNewBudget((prevBudget) => ({
       ...prevBudget,
       date: value,
     }));
@@ -70,11 +70,10 @@ function BudgetNewForm() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(budget),
+      body: JSON.stringify(newbudget),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         navigate(`/budgets/${length}`);
       })
       .catch((error) => {
@@ -93,7 +92,7 @@ function BudgetNewForm() {
           </label>
           <input
             id="date"
-            value={budget.date}
+            value={newbudget.date}
             type="date"
             onChange={handleDateChange}
             required
@@ -110,7 +109,6 @@ function BudgetNewForm() {
               id="withdrawal"
               type="checkbox"
               onChange={handleCheckboxChange}
-              required
               className="mr-2"
             />
           </label>
@@ -124,7 +122,7 @@ function BudgetNewForm() {
             id="item_name"
             type="text"
             required
-            value={budget.item_name}
+            value={newbudget.item_name}
             placeholder="Enter the name of item"
             onChange={handleTextChange}
             className="py-2 px-3 border border-gray-300 rounded-md"
@@ -139,7 +137,7 @@ function BudgetNewForm() {
             type="number"
             placeholder="Enter amount"
             required
-            value={budget.amount}
+            value={newbudget.amount}
             onChange={handleTextChange}
             className="py-2 px-3 border border-gray-300 rounded-md"
           />
@@ -151,7 +149,7 @@ function BudgetNewForm() {
           <input
             id="from"
             type="text"
-            value={budget.from}
+            value={newbudget.from}
             placeholder="Please enter the source or recipient of this income/spending"
             onChange={handleTextChange}
             className="py-2 px-3 border border-gray-300 rounded-md"
@@ -161,7 +159,7 @@ function BudgetNewForm() {
           <label htmlFor="category">Category</label>
           <select
             id="category"
-            value={budget.category}
+            value={newbudget.category}
             onChange={handleCategoryChange}
             className="py-2 px-3 border border-gray-300 rounded-md mt-1 block w-full"
           >

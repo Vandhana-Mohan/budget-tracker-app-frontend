@@ -11,7 +11,6 @@ function BudgetDetails() {
       .then((res) => res.json())
       .then((data) => {
         setBudget(data);
-        console.log(data);
       })
       .catch((error) => {
         navigate("/not-found");
