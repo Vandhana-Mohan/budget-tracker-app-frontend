@@ -12,7 +12,9 @@ function Budget({ budget, index }) {
           {budget.item_name}
         </Link>
       </td>
-      <td className="px-4 py-3">{budget.amount}</td>
+      <td className="px-4 py-3">
+        {!budget.isWithdrawal ? "" : "-"} {budget.amount}
+      </td>
       <td className="px-4 py-3">{budget.date}</td>
       <td className="px-4 py-3">{budget.from}</td>
       <td className="px-4 py-3">{budget.category}</td>

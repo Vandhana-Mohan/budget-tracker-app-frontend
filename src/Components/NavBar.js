@@ -16,8 +16,6 @@ function NavBar() {
         <Link to="/about">
           <li className="cursor-pointer hover:text-gray-300">About Us</li>
         </Link>
-        <li className="cursor-pointer hover:text-gray-300">Feedback</li>
-        <li className="cursor-pointer hover:text-gray-300">Contact Us</li>
       </ul>
     </nav>
   );

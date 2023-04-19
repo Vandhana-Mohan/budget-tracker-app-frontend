@@ -14,12 +14,17 @@ function Budgets() {
       });
   }, []);
 
-  const totalBalance = budgets.reduce((acc, budget) => {
-    return acc + budget.amount;
-  }, 0);
+  let total = 0;
 
-  
-  const formattedBalance = totalBalance.toLocaleString("en-US", {
+  budgets.forEach((budget) => {
+    if (budget.isWithdrawal) {
+      total -= parseInt(budget.amount);
+    } else {
+      total += parseInt(budget.amount);
+    }
+  });
+
+  const formattedBalance = total.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
     minimumFractionDigits: 2,
