@@ -31,12 +31,22 @@ function Budgets() {
     maximumFractionDigits: 2,
   });
 
+  // Calculate the total amount color based on the total amount
+  let totalColor;
+  if (total > 100) {
+    totalColor = { color: "green" };
+  } else if (total >= 0 && total <= 100) {
+    totalColor = { color: "yellow" };
+  } else if (total < 0) {
+    totalColor = { color: "red" };
+  }
+
   return (
     <div
       className="flex flex-col justify-center items-center"
       style={{ paddingBottom: "10rem" }}
     >
-      <h2 className="text-3xl font-bold mb-4">
+      <h2 className="text-3xl font-bold mb-4" style={totalColor}>
         {" "}
         Total Balance: {formattedBalance}
       </h2>
