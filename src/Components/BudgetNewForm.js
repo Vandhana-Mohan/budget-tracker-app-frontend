@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
@@ -6,7 +6,7 @@ function BudgetNewForm() {
   const [budget, setBudget] = useState({
     id: uuidv4(),
     item_name: "",
-    amount: null,
+    amount: 0,
     date: "",
     from: "",
     category: "",
@@ -14,9 +14,8 @@ function BudgetNewForm() {
   });
 
   const navigate = useNavigate();
-  const handleCheckboxChange = (event) => {
-    setBudget({ ...budget, isWithdrawal: event.target.checked });
-  };
+
+  const [length, setLength] = useState([])
 
   const [categories, setCategories] = useState([
     "Taxes",
@@ -38,24 +37,34 @@ function BudgetNewForm() {
     }));
   }
 
-  function handleNewCategory() {
-    const newCategory = prompt("Enter the new category name:");
-    if (newCategory) {
-      setCategories([...categories, newCategory]);
-      setBudget((prevBudget) => ({
-        ...prevBudget,
-        category: newCategory,
-      }));
-    }
-  }
+  const handleCheckboxChange = (event) => {
+    setBudget({ ...budget, isWithdrawal: event.target.checked });
+  };
 
   const handleTextChange = (event) => {
     setBudget({ ...budget, [event.target.id]: event.target.value });
   };
 
+  function handleDateChange(event) {
+    const { value } = event.target;
+    setBudget((prevBudget) => ({
+      ...prevBudget,
+      date: value,
+    }));
+  }
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}/budgets`)
+      .then((res) => res.json())
+      .then((data) => {
+        setLength(data.length);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
     fetch(`${process.env.REACT_APP_API_URL}/budgets`, {
       method: "POST",
       headers: {
@@ -66,10 +75,11 @@ function BudgetNewForm() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        navigate("/budgets");
+        navigate(`/budgets/${length}`);
       })
       .catch((error) => {
         console.log(error);
+        navigate("/not-found");
       });
   };
 
@@ -78,17 +88,19 @@ function BudgetNewForm() {
       <h1 className="text-2xl font-bold mb-4"> Add a new item </h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="flex flex-col w-1/2">
-          <label htmlFor="budgetDate" className="mb-2 text-lg font-medium">
+          <label htmlFor="date" className="mb-2 text-lg font-medium">
             Date
           </label>
           <input
-            id="budgetDate"
+            id="date"
             value={budget.date}
             type="date"
-            onChange={handleTextChange}
+            onChange={handleDateChange}
             required
             placeholder="Enter in mm-dd-yyyy format"
+            pattern="(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-(19|20)[0-9]{2}"
             className="py-2 px-3 border border-gray-300 rounded-md"
+            title="Please match valid format mm-dd-yyyy"
           />
         </div>
         <div className="flex flex-col w-1/2">
@@ -159,9 +171,6 @@ function BudgetNewForm() {
                 {category}
               </option>
             ))}
-            <option value="add_new" style={{ color: "blue" }}>
-              Add new category...
-            </option>
           </select>
         </div>
         <div className="flex justify-center space-x-4">
