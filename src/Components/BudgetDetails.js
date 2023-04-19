@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  // const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const monthName = date.toLocaleString("default", { month: "long" });
+  return `${monthName} ${day}, ${year}`;
+}
+
 function BudgetDetails() {
   const [budget, setBudget] = useState([]);
   let { index } = useParams(); //getting index from URL
@@ -32,17 +41,20 @@ function BudgetDetails() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8" style={{ paddingBottom: "10rem" }}>
+    <div
+      className="container mx-auto px-4 py-8"
+      style={{ paddingBottom: "10rem" }}
+    >
       <div className="bg-white shadow overflow-hidden sm:rounded-lg">
         <div className="px-4 py-5 sm:px-6 my-4">
           <h2 className="text-lg leading-6 font-medium text-gray-900 my-4">
             {budget.item_name} - From {budget.from}
           </h2>
           <p className="mt-1 max-w-2xl text-sm text-gray-500 my-4">
-            <strong> Date : {budget.date} </strong>
+            <strong> Date : {formatDate(budget.date)} </strong> 
           </p>
           <p className="mt-1 max-w-2xl text-sm text-gray-500 my-4">
-            <strong> Amount : {budget.amount} </strong>
+            <strong> Amount : $ {budget.amount} </strong>
           </p>
           <p className="mt-1 max-w-2xl text-sm text-gray-500 my-4">
             <strong> Category : {budget.category} </strong>
