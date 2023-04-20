@@ -13,7 +13,8 @@ Vandhana Mohan [GitHub](https://github.com/Vandhana-Mohan) | [LinkedIn](https://
 ### Trello
 
 We use Trello to manage our project tasks.
-You can view our [Trello board](https://trello.com/invite/b/aPBAsXLu/ATTI95e66bf9a94bda363eef290bb0bab0ddDDF29B80/budgeting-app) here.
+
+You can view our [Trello board](https://trello.com/invite/b/aPBAsXLu/ATTI95e66bf9a94bda363eef290bb0bab0ddDDF29B80/budgeting-app).
 
 ### Features
 
@@ -24,27 +25,27 @@ This app includes the following features:
 - Deleting a transaction
 - Showing all transactions
 - Simple and easy-to-use interface
-- About us page
+- Interactive pages
 - Footer with social media icons
 - Responsive to all devices
 
 ### Completed Stretch Goals
 
-- Trello board
-- Read me for front end and back end
-- Added Google font
-- Changed favicon
-- Changed title
-- Added Tailwind Css
-- Make categories a select HTML element
-- Allow user to add new category
-- Display the bank account total, deposits, withdrawals in navbar other than index
-- Add helpful errors to users when invalid data
-- Use the date object for the date, instead of just a string.
-- Format Date, capitalize name
-- use checkbox to track if withdraw or deposit
-- validations in back end and front end
-- add about us page, contact us page, header, footer, social media
+   - Trello board
+   - Read me for front end and back end
+   - Added Google font
+   - Changed favicon
+   - Changed title
+   - Added Tailwind Css
+   - Make categories a select HTML element
+   - Allow user to add new category
+   - Display the bank account total, deposits, withdrawals in navbar other than index
+   - Add helpful errors to users when invalid data
+   - Use the date object for the date, instead of just a string.
+   - Format Date, capitalize name
+   - use checkbox to track if withdraw or deposit
+   - validations in back end and front end
+   - add about us page, contact us page, header, footer, social media icons for interaction
 
 ## Skills
 
@@ -53,7 +54,7 @@ This app includes the following features:
 - JavaScript: A programming language that allows you to add interactivity and dynamic behavior to web pages.
 - Git: A version control system that allows you to track changes to your code and collaborate with others.
 - GitHub: GitHub is a popular platform used for hosting and sharing code repositories.
-- Adobe Photoshop, PicsArt: A graphics editing software used for image editing and manipulation.
+- PicsArt: A graphics editing software used for image editing and manipulation.
 - Tailwind: A utility-first CSS framework that helps quick design responsive and accessible interfaces for the web.
 - Express: A fast and minimalist web framework for Node.js that allows you to build web applications and APIs.
 
