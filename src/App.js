@@ -14,6 +14,7 @@ import New from "./Pages/New";
 import Show from "./Pages/Show";
 import Edit from "./Pages/Edit";
 import FourOFour from "./Pages/FourOFour";
+import ContactUs from "./Components/ContactUs";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<ContactUs />} />
             <Route path="/budgets/:index/edit" element={<Edit />} />
             <Route path="/budgets/new" element={<New />} />
             <Route path="/budgets/:index" element={<Show />} />

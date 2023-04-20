@@ -38,13 +38,13 @@ This app includes the following features:
 - Added Tailwind Css
 - Make categories a select HTML element
 - Allow user to add new category
-- Display the bank account total in navbar other than index
+- Display the bank account total, deposits, withdrawals in navbar other than index
 - Add helpful errors to users when invalid data
 - Use the date object for the date, instead of just a string.
 - Format Date, capitalize name
 - use checkbox to track if withdraw or deposit
 - validations in back end and front end
-- add about us page, header, footer, social media
+- add about us page, contact us page, header, footer, social media
 
 ## Skills
 

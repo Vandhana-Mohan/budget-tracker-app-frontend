@@ -70,7 +70,7 @@ function Footer() {
             </Link>
           </li>
         </ul>
-        <p className="text-center py-1 text-gray-400">
+        <p className="text-center py-1 pb-0 text-gray-400 mt-4">
           © 2023 Vandhana Mohan. All rights reserved.
         </p>
       </nav>
