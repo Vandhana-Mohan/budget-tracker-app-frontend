@@ -3,15 +3,16 @@
 [Budget Master Application ](https://budget-master-app.netlify.app/) is a budget application app that helps users keep track of their finances. The app is built using React, HTML, Tailwind, and JavaScript, and it uses an API from a backend created with Express.
 
 ### Introduction
+
 This budget application app helps users keep track of their finances by allowing them to add, edit, and delete transactions. The interface is simple and easy to use, making it accessible to users of all experience levels. Additionally, the app includes an About Us page and a footer with social media icons to help users learn more about the developers and stay connected.
 
-### About Developer 
+### About Developer
 
-Vandhana Mohan  [GitHub](https://github.com/Vandhana-Mohan) | [LinkedIn](https://www.linkedin.com/in/vandhanamohan/)
+Vandhana Mohan [GitHub](https://github.com/Vandhana-Mohan) | [LinkedIn](https://www.linkedin.com/in/vandhanamohan/)
 
 ### Trello
 
-We use Trello to manage our project tasks. 
+We use Trello to manage our project tasks.
 You can view our [Trello board](https://trello.com/invite/b/aPBAsXLu/ATTI95e66bf9a94bda363eef290bb0bab0ddDDF29B80/budgeting-app) here.
 
 ### Features
@@ -27,7 +28,26 @@ This app includes the following features:
 - Footer with social media icons
 - Responsive to all devices
 
+### Completed Stretch Goals
+
+- Trello board
+- Read me for front end and back end
+- Added Google font
+- Changed favicon
+- Changed title
+- Added Tailwind Css
+- Make categories a select HTML element
+- Allow user to add new category
+- Display the bank account total in navbar other than index
+- Add helpful errors to users when invalid data
+- Use the date object for the date, instead of just a string.
+- Format Date, capitalize name
+- use checkbox to track if withdraw or deposit
+- validations in back end and front end
+- add about us page, header, footer, social media
+
 ## Skills
+
 - React: A JavaScript library used for building user interfaces and web applications.
 - HTML: Used to create the structure and layout of web pages.
 - JavaScript: A programming language that allows you to add interactivity and dynamic behavior to web pages.
@@ -45,6 +65,7 @@ This app includes the following features:
    git clone <repository-url>
 
    ```
+
 2. Navigate to the project directory and install the dependencies using the following command:
 
    ```
@@ -52,8 +73,8 @@ This app includes the following features:
    npm install
 
    ```
-3. Run  `npm start` to start the development server.
 
+3. Run `npm start` to start the development server.
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
@@ -85,7 +106,6 @@ This app can be deployed using any hosting service that supports React apps. To 
 2. Upload the contents of the build directory to your hosting service.
 3. Start the app using your hosting service's deployment tools.
 
-
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
@@ -115,4 +135,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # budget-tracker-app-frontend

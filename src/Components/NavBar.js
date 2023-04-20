@@ -1,26 +1,25 @@
 import { Link } from "react-router-dom";
+import TotalAmount from "./TotalAmount";
+
 function NavBar(props) {
   return (
     <nav className="bg-gray-700 text-white py-4">
       <ul className="flex justify-around">
-        <Link to="/budgets">
-          <li className="cursor-pointer hover:text-gray-300">
-            View All Transactions
-          </li>
-        </Link>
-        <Link to="/budgets">
-          <li className="cursor-pointer hover:text-gray-300">
-            Total Balance: {props.totalBalance}
-          </li>
-        </Link>
-        <Link to="/budgets/new">
-          <li className="cursor-pointer hover:text-gray-300">
-            New Transaction
-          </li>
-        </Link>
-        <Link to="/about">
-          <li className="cursor-pointer hover:text-gray-300">About Us</li>
-        </Link>
+        <li className="cursor-pointer hover:text-gray-300">
+          <Link to="/budgets">View All Transactions</Link>
+        </li>
+        <li className="cursor-pointer hover:text-gray-300">
+          <Link to="/budgets">
+            {" "}
+            <TotalAmount totalBalance={props.totalBalance} />{" "}
+          </Link>
+        </li>
+        <li className="cursor-pointer hover:text-gray-300">
+          <Link to="/budgets/new">Add New Transaction</Link>
+        </li>
+        <li className="cursor-pointer hover:text-gray-300">
+          <Link to="/about"> About Us</Link>
+        </li>
       </ul>
     </nav>
   );

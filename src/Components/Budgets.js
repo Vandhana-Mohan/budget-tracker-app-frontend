@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Budget from "./Budget";
-import Navbar from "./NavBar";
 
 function Budgets() {
   const [budgets, setBudgets] = useState([]);
@@ -14,34 +13,6 @@ function Budgets() {
         console.error(error);
       });
   }, []);
-
-  // let total = 0;
-
-  // budgets.forEach((budget) => {
-  //   if (budget.isWithdrawal) {
-  //     total -= parseInt(budget.amount);
-  //   } else {
-  //     total += parseInt(budget.amount);
-  //   }
-  // });
-
-  // const formattedBalance = total.toLocaleString("en-US", {
-  //   style: "currency",
-  //   currency: "USD",
-  //   minimumFractionDigits: 2,
-  //   maximumFractionDigits: 2,
-  // });
-
-  // Calculate the total amount color based on the total amount
-
-  // let totalColor;
-  // if (total > 100) {
-  //   totalColor = { color: "green" };
-  // } else if (total >= 0 && total <= 100) {
-  //   totalColor = { color: "yellow" };
-  // } else if (total < 0) {
-  //   totalColor = { color: "red" };
-  // }
 
   return (
     <div
