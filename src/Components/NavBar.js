@@ -8,7 +8,7 @@ function NavBar(props) {
         <li className="cursor-pointer hover:text-gray-300">
           <Link
             to="/budgets"
-            className="bg-green-500 text-white py-2 px-4 rounded"
+            className="bg-blue-500 text-white py-2 px-4 rounded"
           >
             View All Transactions
           </Link>
@@ -21,7 +21,7 @@ function NavBar(props) {
         <li className="cursor-pointer hover:text-gray-300">
           <Link
             to="/budgets/new"
-            className="bg-green-500 text-white py-2 px-4 rounded"
+            className="bg-blue-500 text-white py-2 px-4 rounded"
           >
             Add New Transaction
           </Link>
