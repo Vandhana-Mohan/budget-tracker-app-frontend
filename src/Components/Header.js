@@ -12,6 +12,12 @@ function Header() {
           Budget Master
         </h1>
       </Link>
+      <h2 className="text-gray-700 text-xl italic font-bold mt-2">
+        <span className="relative z-10 inline-block px-3 py-1">
+          “You don’t have to see the whole staircase, just take the first step.”
+          – Martin Luther King, Jr.
+        </span>
+      </h2>
     </header>
   );
 }

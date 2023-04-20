@@ -5,6 +5,12 @@ function Footer() {
     <footer>
       <nav className="bg-gray-700 text-white py-4 fixed bottom-0 w-full">
         <ul className="flex justify-center space-x-16">
+          <li className="cursor-pointer hover:text-gray-300 text-lg">
+            <Link to="/about"> About Us</Link>
+          </li>
+          <li className="cursor-pointer hover:text-gray-300 text-lg">
+            <Link to="/contact"> Contact Us</Link>
+          </li>
           <li className="cursor-pointer hover:text-yellow-400 transition duration-300">
             <Link
               to="https://facebook.com/"
@@ -64,7 +70,7 @@ function Footer() {
             </Link>
           </li>
         </ul>
-        <p className="text-center py-4 text-gray-400">
+        <p className="text-center py-1 text-gray-400">
           © 2023 Vandhana Mohan. All rights reserved.
         </p>
       </nav>
