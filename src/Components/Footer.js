@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({ isDarkMode, handleDarkMode }) {
   return (
     <footer>
       <nav className="bg-gray-700 text-white py-4 fixed bottom-0 w-full">
@@ -11,6 +11,17 @@ function Footer() {
           <li className="cursor-pointer hover:text-gray-300 text-lg">
             <Link to="/contact"> Contact Us</Link>
           </li>
+          <li
+            className="cursor-pointer hover:text-gray-300 text-lg"
+            onClick={handleDarkMode}
+          >
+            {isDarkMode ? "Light" : "Dark"} Mode
+            <span className="ml-2">
+              <i className="fas fa-cog" aria-hidden="true"></i>
+              <span className="sr-only">Dark mode settings</span>
+            </span>
+          </li>
+
           <li className="cursor-pointer hover:text-yellow-400 transition duration-300">
             <Link
               to="https://facebook.com/"

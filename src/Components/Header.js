@@ -1,7 +1,7 @@
 import Budget from "../Images/Budget_logo.jpeg";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ isDarkMode, handleDarkMode }) {
   return (
     <header className="flex m-1 p-4 bg-green-100">
       <Link to="/">
