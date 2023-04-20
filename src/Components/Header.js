@@ -5,7 +5,7 @@ function Header({ isDarkMode }) {
   return (
     <header
       className={"flex m-1 p-4 " + (isDarkMode ? "text-white" : "text-black")}
-      style={{ backgroundColor: isDarkMode ? "#1f2937" : "#f9fafb" }}
+      style={{ backgroundColor: isDarkMode ? "#1f2937" : "#85BB65" }}
     >
       <Link to="/">
         <img src={Budget} alt="logo" className="w-20 h-20" />
