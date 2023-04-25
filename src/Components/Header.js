@@ -15,12 +15,11 @@ function Header({ isDarkMode }) {
           Budget Master
         </h1>
       </Link>
-      <h2 className="text-gray-700 text-xl italic font-bold text-right">
-        <span className="relative z-10 inline-block px-3 py-1">
-          “You don’t have to see the whole staircase, just take the first step.”
-          – Martin Luther King, Jr.
-        </span>
-      </h2>
+
+      <blockquote className="m-6 text-xl font-bold text-right">
+        “You don’t have to see the whole staircase, just take the first step.”
+        <cite>- Martin Luther King, Jr.</cite>
+      </blockquote>
     </header>
   );
 }
